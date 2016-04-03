@@ -1,6 +1,32 @@
+  <head>
+    <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+    <script type="text/javascript">
+      google.charts.load('current', {'packages':['corechart']});
+      google.charts.setOnLoadCallback(drawChart);
+      function drawChart() {
+        var data = google.visualization.arrayToDataTable([
+          ['Year', 'Me', 'Chicago'],
+          ['2013',  1000,      400],
+          ['2014',  1170,      460],
+          ['2015',  660,       1120],
+          ['2016',  1030,      540]
+        ]);
+
+        var options = {
+          title: 'Comparing Your Carbon Footprint',
+          hAxis: {title: 'Year',  titleTextStyle: {color: '#333'}},
+          vAxis: {minValue: 0}
+        };
+
+        var chart = new google.visualization.AreaChart(document.getElementById('chart_div'));
+        chart.draw(data, options);
+      }
+    </script>
+  </head>
+
 <div class="page-header">
   <h1>
-    Your Footprint
+    My Footprint
   </h1>
 </div>
 
@@ -9,3 +35,7 @@
   <li role="presentation"><a href="#">Month</a></li>
   <li role="presentation"><a href="#">Week</a></li>
 </ul>
+
+<div id="chart_div" style="height: 500px;"></div>
+
+

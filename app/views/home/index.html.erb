@@ -1,12 +1,52 @@
+<head>
+    <!--Load the AJAX API-->
+    <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+    <script type="text/javascript">
+
+      // Load the Visualization API and the corechart package.
+      google.charts.load('current', {'packages':['corechart']});
+
+      // Set a callback to run when the Google Visualization API is loaded.
+      google.charts.setOnLoadCallback(drawChart);
+
+      // Callback that creates and populates a data table,
+      // instantiates the pie chart, passes in the data and
+      // draws it.
+      function drawChart() {
+
+        // Create the data table.
+        var data = new google.visualization.DataTable();
+        data.addColumn('string', 'Community');
+        data.addColumn('number', 'Carbon');
+        data.addRows([
+          ['Me', 3],
+          ['Friends', 1],
+          ['Family', 1],
+          ['Chicago', 1],
+          ['World', 2]
+        ]);
+
+        // Set chart options
+        var options = {'title':'My Carbon Footprint vs. My Communities',
+                       'width':500,
+                       'height':300};
+
+        // Instantiate and draw our chart, passing in some options.
+        var chart = new google.visualization.ColumnChart(document.getElementById('chart_div'));
+        chart.draw(data, options);
+      }
+    </script>
+  </head>
+
 <div class="page-header">
   <h1>
     Home
   </h1>
 </div>
 
-<div class="jumbotron">
-  <h1>Welcome back, Harmesh.</h1>
-</div>
+<a href="/action/plan_journey" role="button" class="btn btn-success btn-lg btn-block">Plan journey</a>
+
+<hr>
 
 <div class="panel panel-info">
   <div class="panel-heading">
@@ -15,66 +55,7 @@
   <div class="panel-body">
     Your carbon footprint is better than your friends, but worse than people in Chicago and the rest of the world
 
-<hr>
-
-<div class="container">
-    <div class="row">
-        <div class="col-sm-3">
-          <p>You</p>
-        </div>
-        <div class="col-sm-8">
-          <div class="progress">
-            <div class="progress-bar progress-bar-success progress-bar-striped" role="progressbar" aria-valuenow="40" aria-valuemin="0" aria-valuemax="100" style="width: 40%">
-              <span class="sr-only">40% Complete (success)</span>
-            </div>
-          </div>
-        </div>
-    </div>
-    <div class="row">
-        <div class="col-sm-3">
-          <p>Your friends</p>
-        </div>
-        <div class="col-sm-8">
-          <div class="progress">
-          <div class="progress-bar progress-bar-info progress-bar-striped" role="progressbar" aria-valuenow="20" aria-valuemin="0" aria-valuemax="100" style="width: 20%">
-            <span class="sr-only">20% Complete</span>
-          </div>
-        </div>
-        </div>
-    </div>
-    <div class="row">
-        <div class="col-sm-3">
-          <p>Chicago</p>
-        </div>
-        <div class="col-sm-8">
-          <div class="progress">
-            <div class="progress-bar progress-bar-warning progress-bar-striped" role="progressbar" aria-valuenow="60" aria-valuemin="0" aria-valuemax="100" style="width: 60%">
-              <span class="sr-only">60% Complete (warning)</span>
-            </div>
-          </div>
-        </div>
-    </div>
-    <div class="row">
-        <div class="col-sm-3">
-          <p>The world</p>
-        </div>
-        <div class="col-sm-8">
-          <div class="progress">
-            <div class="progress-bar progress-bar-danger progress-bar-striped" role="progressbar" aria-valuenow="80" aria-valuemin="0" aria-valuemax="100" style="width: 80%">
-              <span class="sr-only">80% Complete (danger)</span>
-            </div>
-          </div>
-        </div>
-    </div>
+<!--Div that will hold the column chart-->
+<div id="chart_div"></div>
 </div>
 </div>
-</div>
-
-<p>
-  <button type="button" class="btn btn-primary btn-lg">Your Statistics</button>
-  <button type="button" class="btn btn-primary btn-lg">Community Statistics</button>
-  <button type="button" class="btn btn-primary btn-lg">Actions</button>
-  <button type="button" class="btn btn-default btn-lg">Travel</button>
-  <button type="button" class="btn btn-default btn-lg">Offset</button>
-  <button type="button" class="btn btn-default btn-lg">Advice</button>
-</p>
