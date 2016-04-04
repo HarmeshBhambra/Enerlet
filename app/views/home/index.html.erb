@@ -7,55 +7,148 @@
       google.charts.load('current', {'packages':['corechart']});
 
       // Set a callback to run when the Google Visualization API is loaded.
-      google.charts.setOnLoadCallback(drawChart);
+      google.charts.setOnLoadCallback(drawStackedChart);
+
+      google.charts.setOnLoadCallback(drawLineChart);
 
       // Callback that creates and populates a data table,
       // instantiates the pie chart, passes in the data and
       // draws it.
-      function drawChart() {
+      function drawStackedChart() {
 
         // Create the data table.
-        var data = new google.visualization.DataTable();
-        data.addColumn('string', 'Community');
-        data.addColumn('number', 'Carbon');
-        data.addRows([
-          ['Me', 3],
-          ['Friends', 1],
-          ['Family', 1],
-          ['Chicago', 1],
-          ['World', 2]
-        ]);
+        var data = google.visualization.arrayToDataTable([
+        ['','Travel', 'Home', 'Eat', 'Shop',
+           { role: 'annotation' } ],
+        ['Me', 10, 24, 20, 32, ''],
+        ['Community', 16, 22, 23, 30, '']
+      ]);
 
         // Set chart options
-        var options = {'title':'My Carbon Footprint vs. My Communities',
-                       'width':500,
-                       'height':300};
+        var options = {
+        title: 'Carbon Footprint comparison',
+        height: 200,
+        legend: { position: 'top', maxLines: 3 },
+        bar: { groupWidth: '75%' },
+        isStacked: true
+      };
 
         // Instantiate and draw our chart, passing in some options.
-        var chart = new google.visualization.ColumnChart(document.getElementById('chart_div'));
+        var chart = new google.visualization.BarChart(document.getElementById('chart_div'));
         chart.draw(data, options);
       }
-    </script>
-  </head>
 
-<div class="page-header">
-  <h1>
-    Home
-  </h1>
+      function drawLineChart() {
+        var data = google.visualization.arrayToDataTable([
+          ['Year', 'Me', 'Community'],
+          ['2004',  1200,      1500],
+          ['2005',  1000,      1300],
+          ['2006',  1100,       1200],
+          ['2007',  800,      900]
+        ]);
+
+        var options = {
+          title: 'Timeline',
+          curveType: 'function',
+          legend: { position: 'bottom' }
+        };
+
+        var chart = new google.visualization.LineChart(document.getElementById('curve_chart'));
+
+        chart.draw(data, options);
+      }
+      </script>
+<style>
+  .navbar-nav {
+    width: 100%;
+    text-align: center;
+    > li {
+      float: none;
+      display: inline-block;
+    }
+  }
+</style>
+</head>
+
+  <nav class="navbar navbar-fixed-top navbar-default" role="navigation">
+  <div class="container-fluid">
+    <!-- Brand and toggle get grouped for better mobile display -->
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+        <span class="sr-only">Toggle navigation</span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+    </div>
+
+    <!-- Collect the nav links, forms, and other content for toggling -->
+    <div class="collapse navbar-collapse nav nav-center" id="bs-example-navbar-collapse-1">
+      <ul class="nav navbar-nav">
+        <li class="pull-left"><a href="#">EnerLet</a></li>
+        <li><a href="#">Home</a></li>
+      </ul>
+    </div><!-- /.navbar-collapse -->
+  </div><!-- /.container-fluid -->
+</nav>
+
+<nav class="navbar navbar-fixed-bottom navbar-default" role="navigation">
+  <div class="container-fluid">
+    <!-- Brand and toggle get grouped for better mobile display -->
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+        <span class="sr-only">Toggle navigation</span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+    </div>
+
+    <!-- Collect the nav links, forms, and other content for toggling -->
+    <div class="collapse navbar-collapse nav nav-center" id="bs-example-navbar-collapse-1">
+      <ul class="nav navbar-nav">
+        <li class="active"><a href="#">Home</a></li>
+        <li><a href="#">Footprint</a></li>
+        <li><a href="#">Journey</a></li>
+        <li><a href="#">Lifestyle</a></li>
+        <li><a href="#">Profile</a></li>
+      </ul>
+    </div><!-- /.navbar-collapse -->
+  </div><!-- /.container-fluid -->
+</nav>
+
+<div class="row">
+  <div class="col-md-12">
+    <form action="..." method="post">
+      <!-- Hidden input for authenticity token to protect from forgery -->
+      <input name="authenticity_token" type="hidden" value="<%= form_authenticity_token %>">
+
+      <!-- Label and input for name -->
+      <div class="form-group">
+        <label for="name" class="control-label">
+          Plan journey
+        </label>
+
+        <input type="text" id="name" placeholder="Destination" name="name" class="form-control">
+      </div>
+
+    </form>
+  </div>
 </div>
-
-<a href="/action/plan_journey" role="button" class="btn btn-success btn-lg btn-block">Plan journey</a>
 
 <hr>
 
 <div class="panel panel-info">
   <div class="panel-heading">
-    <h3 class="panel-title">Your latest footprint</h3>
+    <h3 class="panel-title">Latest statistics</h3>
   </div>
   <div class="panel-body">
-    Your carbon footprint is better than your friends, but worse than people in Chicago and the rest of the world
 
 <!--Div that will hold the column chart-->
 <div id="chart_div"></div>
+
+<div id="curve_chart" style="height: 300px"></div>
+
+
 </div>
 </div>
