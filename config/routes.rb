@@ -19,4 +19,8 @@ get "/action", :controller => "actions", :action => "index"
 
 get "/action/plan_journey", :controller => "actions", :action => "plan_journey"
 
+get "/action/map", :controller => "actions", :action => "map"
+
+get "/action/google_map", :controller => "actions", :action => "google_map"
+
 end
