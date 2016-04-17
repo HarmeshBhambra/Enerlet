@@ -17,10 +17,11 @@ get "/footprint", :controller => "footprints", :action => "index"
 # Routes for the Actions resource
 get "/action", :controller => "actions", :action => "index"
 
-get "/action/plan_journey", :controller => "actions", :action => "plan_journey"
+# Routes for the Trips resource
+get "/trip", :controller => "trips", :action => "index"
 
-get "/action/map", :controller => "actions", :action => "map"
+get "/trip/map", :controller => "trips", :action => "map"
 
-get "/action/google_map", :controller => "actions", :action => "google_map"
+get "/trip/google_map", :controller => "trips", :action => "google_map"
 
 end
