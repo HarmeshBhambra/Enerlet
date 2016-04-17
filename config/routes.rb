@@ -8,8 +8,8 @@ get "/", :controller => "home", :action => "index"
 # Routes for the About resource
 get "/aboutus", :controller => "about", :action => "index"
 
-# Routes for the Profiles resource
-get "/profile", :controller => "profiles", :action => "index"
+# Routes for the Lifestyles resource
+get "/lifestyle", :controller => "lifestyles", :action => "index"
 
 # Routes for the Footprints resource
 get "/footprint", :controller => "footprints", :action => "index"
