@@ -14,9 +14,9 @@
     </script>
     <script type="text/javascript">
       $(function() {
-    drawAreaChart();
+    drawChart();
   });
-      function drawAreaChart() {
+      function drawChart() {
         var data = google.visualization.arrayToDataTable([
           ['Year', 'Me', 'Community'],
           ['2013',  1000,      400],
@@ -36,7 +36,7 @@
       }
 
       $(window).resize(function(){
-      drawAreaChart();
+      drawChart();
       });
     </script>
   </head>
