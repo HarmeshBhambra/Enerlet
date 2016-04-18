@@ -11,11 +11,13 @@
 
       // Load the Visualization API and the corechart package.
       google.charts.load('current', {'packages':['corechart']});
+    </script>
 
       // Set a callback to run when the Google Visualization API is loaded.
-      google.charts.setOnLoadCallback(drawStackedChart);
-
-      google.charts.setOnLoadCallback(drawLineChart);
+      <script type="text/javascript">
+      $(function() {
+    drawStackedChart();
+  });
 
       // Callback that creates and populates a data table,
       // instantiates the pie chart, passes in the data and
@@ -44,6 +46,11 @@
         chart.draw(data, options);
       }
 
+
+      $(function() {
+        drawLineChart();
+      });
+
       function drawLineChart() {
         var data = google.visualization.arrayToDataTable([
           ['Year', 'Me', 'Community'],
@@ -56,6 +63,7 @@
         var options = {
           title: 'Timeline',
           curveType: 'function',
+          width: "100%",
           legend: { position: 'bottom' }
         };
 
@@ -63,6 +71,13 @@
 
         chart.draw(data, options);
       }
+
+      $(window).resize(function(){
+      drawStackedChart();
+      drawLineChart();
+      });
+
+
       </script>
 </head>
 
@@ -92,14 +107,9 @@
     <h3 class="panel-title">Latest statistics</h3>
   </div>
   <div class="panel-body">
+    <!--Div that will hold the column chart-->
 
-<!--Div that will hold the column chart-->
-<div id="chart_div"></div>
-
-<div id="curve_chart" style="height: 300px"></div>
-
-
-</div>
+  </div>
 </div>
 
 <script>
