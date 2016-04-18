@@ -5,6 +5,8 @@ group :production do
   gem 'rails_12factor'
 end
 
+gem 'omniauth-facebook', '~> 1.4.1'
+
 gem "chartkick"
 
 gem 'jquery-turbolinks'
