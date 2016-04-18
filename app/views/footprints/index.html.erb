@@ -10,7 +10,12 @@
 
 
       google.charts.load('current', {'packages':['corechart']});
-      google.charts.setOnLoadCallback(drawChart);
+
+    </script>
+    <script type="text/javascript">
+      $(function() {
+    drawChart();
+  });
       function drawChart() {
         var data = google.visualization.arrayToDataTable([
           ['Year', 'Me', 'Community'],
