@@ -14,9 +14,9 @@
     </script>
     <script type="text/javascript">
       $(function() {
-    drawChart();
+    drawAreaChart();
   });
-      function drawChart() {
+      function drawAreaChart() {
         var data = google.visualization.arrayToDataTable([
           ['Year', 'Me', 'Community'],
           ['2013',  1000,      400],
@@ -31,12 +31,12 @@
           vAxis: {minValue: 0}
         };
 
-        var chart = new google.visualization.AreaChart(document.getElementById('chart_div'));
+        var chart = new google.visualization.AreaChart(document.getElementById('chart_div1'));
         chart.draw(data, options);
       }
 
       $(window).resize(function(){
-      drawChart();
+      drawAreaChart();
       });
     </script>
   </head>
@@ -47,7 +47,7 @@
   <li role="presentation"><a href="#">Week</a></li>
 </ul>
 
-<div id="chart_div" style="height: 500px;"></div>
+<div id="chart_div1" style="height: 500px;"></div>
 
 <script>
   (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
