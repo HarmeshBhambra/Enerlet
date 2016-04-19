@@ -4,7 +4,7 @@ Rails.application.routes.draw do
 
   get 'sessions/destroy'
 
-  devise_for :users, controllers: { registrations: "registrations", sessions: "sessions" }
+  devise_for :users, controllers: { registrations: "registrations" }
 
 # Routes for the Home resource
 get "/", :controller => "home", :action => "index"
