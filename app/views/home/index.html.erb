@@ -24,12 +24,13 @@
       <div class="container">
         <div class="row">
           <div class="col-sm-offset-1 col-sm-5">
-            <h3 class="text_over_image"><a href="/aboutus" style="color:white">
-              <% if user_signed_in? == true %>
+            <% if user_signed_in? == true %>
+            <h3 class="text_over_image"><a href="/beta" style="color:white">
               Start Trial >
-              <% else %>
+            <% else %>
+            <h3 class="text_over_image"><a href="/aboutus" style="color:white">
               About >
-              <% end %>
+            <% end %>
             </a></h3>
           </div>
           <div class="col-sm-5">
