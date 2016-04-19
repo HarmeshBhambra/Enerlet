@@ -4,10 +4,11 @@ Rails.application.routes.draw do
 
   get 'sessions/destroy'
 
-  devise_for :users
+  devise_for :users, controllers: { registrations: "registrations" }
 
 # Routes for the Home resource
 get "/", :controller => "home", :action => "index"
+get "/beta", :controller => "home", :action => "beta"
 
 # Routes for the About resource
 get "/aboutus", :controller => "about", :action => "index"
