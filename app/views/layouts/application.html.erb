@@ -50,11 +50,15 @@
       <!-- Collect the nav links, forms, and other content for toggling -->
       <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
         <ul class="nav navbar-nav">
+          <% if user_signed_in? == true %>
           <li><a href="/aboutus">About</a></li>
           <li><a href="/footprint">Footprint</a></li>
           <li><a href="/trip">Trip</a></li>
           <li><a href="/action">Action</a></li>
           <li><a href="/lifestyle">Lifestyle</a></li>
+          <% else %>
+          <li><a href="/aboutus">About</a></li>
+          <% end %>
         </ul>
 
         <ul class="nav navbar-nav navbar-right">
