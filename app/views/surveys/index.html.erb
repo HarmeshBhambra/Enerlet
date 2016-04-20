@@ -1,0 +1,40 @@
+<div class="page-header">
+  <h1>
+    Surveys
+    <a href="/surveys/new" class="btn btn-lg btn-success">New Survey</a>
+  </h1>
+</div>
+
+<div class="row">
+  <div class="col-md-12">
+    <table class="table table-striped table-hover">
+      <tr>
+        <th>Flight type</th>
+        <th>Car share</th>
+        <th>User</th>
+        <th>Flight miles</th>
+        <th>Car type</th>
+        <th>Car miles</th>
+        <th>Diet</th>
+        <th>Actions</th>
+      </tr>
+
+      <% @surveys.each do |survey| %>
+      <tr>
+        <td><%= survey.flight_type %></td>
+        <td><%= survey.car_share %></td>
+        <td><%= survey.user_id %></td>
+        <td><%= survey.flight_miles %></td>
+        <td><%= survey.car_type %></td>
+        <td><%= survey.car_miles %></td>
+        <td><%= survey.diet %></td>
+        <td>
+          <a href="/surveys/<%= survey.id %>" class="btn btn-primary">Show</a>
+          <a href="/surveys/<%= survey.id %>/edit" class="btn btn-warning">Edit</a>
+          <a href="/delete_survey/<%= survey.id %>" class="btn btn-danger" rel="nofollow">Delete</a>
+        </td>
+      </tr>
+      <% end %>
+    </table>
+  </div>
+</div>

@@ -1,0 +1,91 @@
+<!-- Validation failure messages -->
+<% if @survey.errors.any? %>
+  <% @survey.errors.full_messages.each do |message| %>
+    <div class="alert alert-dismissable alert-danger">
+      <button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button>
+      <%= message %>
+    </div>
+  <% end %>
+<% end %>
+
+<div class="page-header">
+  <h3>Edit Survey #<%= @survey.id %></h3>
+</div>
+
+<div class="row">
+  <div class="col-md-12">
+    <form action="/update_survey/<%= @survey.id %>" method="post">
+      <!-- Hidden input for authenticity token to protect from forgery -->
+      <input name="authenticity_token" type="hidden" value="<%= form_authenticity_token %>">
+
+      <!-- Label and input for flight_type -->
+      <div class="form-group">
+        <label for="flight_type" class="control-label">
+          Flight type
+        </label>
+
+        <input type="text" id="flight_type" name="flight_type" placeholder="Flight type" class="form-control" value="<%= @survey.flight_type %>">
+      </div>
+
+      <!-- Label and input for car_share -->
+      <div class="form-group">
+        <label for="car_share" class="control-label">
+          Car share
+        </label>
+
+        <input type="text" id="car_share" name="car_share" placeholder="Car share" class="form-control" value="<%= @survey.car_share %>">
+      </div>
+
+      <!-- Label and input for user_id -->
+      <div class="form-group">
+        <label for="user_id" class="control-label">
+          User
+        </label>
+
+        <input type="text" id="user_id" name="user_id" placeholder="User" class="form-control" value="<%= @survey.user_id %>">
+      </div>
+
+      <!-- Label and input for flight_miles -->
+      <div class="form-group">
+        <label for="flight_miles" class="control-label">
+          Flight miles
+        </label>
+
+        <input type="text" id="flight_miles" name="flight_miles" placeholder="Flight miles" class="form-control" value="<%= @survey.flight_miles %>">
+      </div>
+
+      <!-- Label and input for car_type -->
+      <div class="form-group">
+        <label for="car_type" class="control-label">
+          Car type
+        </label>
+
+        <input type="text" id="car_type" name="car_type" placeholder="Car type" class="form-control" value="<%= @survey.car_type %>">
+      </div>
+
+      <!-- Label and input for car_miles -->
+      <div class="form-group">
+        <label for="car_miles" class="control-label">
+          Car miles
+        </label>
+
+        <input type="text" id="car_miles" name="car_miles" placeholder="Car miles" class="form-control" value="<%= @survey.car_miles %>">
+      </div>
+
+      <!-- Label and input for diet -->
+      <div class="form-group">
+        <label for="diet" class="control-label">
+          Diet
+        </label>
+
+        <input type="text" id="diet" name="diet" placeholder="Diet" class="form-control" value="<%= @survey.diet %>">
+      </div>
+
+      <button class="btn btn-warning">
+        Update Survey
+      </button>
+      or
+      <a href="/surveys/<%= @survey.id %>">Cancel</a>
+    </form>
+  </div>
+</div>

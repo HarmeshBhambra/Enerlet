@@ -1,0 +1,43 @@
+<div class="page-header">
+  <h3>Survey #<%= @survey.id %></h3>
+</div>
+
+<div class="row">
+  <div class="col-md-12">
+    <dl class="dl-horizontal">
+      <dt>Flight type</dt>
+      <dd><%= @survey.flight_type %></dd>
+
+      <dt>Car share</dt>
+      <dd><%= @survey.car_share %></dd>
+
+      <dt>User</dt>
+      <dd><%= @survey.user_id %></dd>
+
+      <dt>Flight miles</dt>
+      <dd><%= @survey.flight_miles %></dd>
+
+      <dt>Car type</dt>
+      <dd><%= @survey.car_type %></dd>
+
+      <dt>Car miles</dt>
+      <dd><%= @survey.car_miles %></dd>
+
+      <dt>Diet</dt>
+      <dd><%= @survey.diet %></dd>
+
+    </dl>
+
+    <div class="btn-group btn-group-justified">
+      <a href="/surveys" class="btn btn-primary">
+        Back
+      </a>
+      <a href="/surveys/<%= @survey.id %>/edit" class="btn btn-warning">
+        Edit
+      </a>
+      <a href="/delete_survey/<%= @survey.id %>" class="btn btn-danger" rel="nofollow">
+        Delete
+      </a>
+    </div>
+  </div>
+</div>
