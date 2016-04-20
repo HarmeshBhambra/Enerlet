@@ -116,9 +116,11 @@ src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDkf2cfio5CEM-bD6V1_NHsiGP
     </select>
     </div>
 
-    <div id="map" style="width: 400px; height: 400px"></div>
+    <div id="map" style="width: 100%; height: 400px"></div>
 
-    <a href="https://www.google.com/maps/dir/<%= @url_safe_origin %>/<%= @url_safe_destination %>/">Link to Google Maps</a>
+    <br>
+
+    <a href="<%= @google_maps %>" target="_blank">Complete your trip on Google Maps</a>
 
   </div>
 </div>

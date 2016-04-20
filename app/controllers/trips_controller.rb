@@ -68,5 +68,8 @@ def map
 
   @carbon_bicycling = @distance_bicycling.to_f*0
 
+  #Google Maps Link
+  @google_maps = "http://maps.google.com/maps?saddr=#{@url_safe_origin}&daddr=#{@url_safe_destination}"
+
 end
 end

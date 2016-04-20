@@ -8,18 +8,24 @@
   Use our trip feature to travel greener. Enter in an origin and journey, and see what transportation modes have the lowest carbon impact.
 </div>
 
-<form action="/trip/map">
-  <div>
-    <label for="origin">Origin</label>
-    <input type="text" name="origin" id="origin">
+<form class="form-horizontal" action="/trip/map">
+  <div class="form-group">
+    <label for="origin" class="col-sm-2 control-label">Origin</label>
+    <div class="col-sm-10">
+      <input type="text" class="form-control" id="origin" name="origin">
+    </div>
   </div>
-
-  <div>
-    <label for="destination">Destination</label>
-    <input type="text" name="destination" id="destination">
+  <div class="form-group">
+    <label for="destination" class="col-sm-2 control-label">Destination</label>
+    <div class="col-sm-10">
+      <input type="text" class="form-control" id="destination" name="destination">
+    </div>
   </div>
-
-  <button>Tell me the greenest route</button>
+  <div class="form-group">
+    <div class="col-sm-offset-2 col-sm-10">
+      <button type="submit" class="btn btn-primary">Tell me the greenest mode</button>
+    </div>
+  </div>
 </form>
 
 <script>
