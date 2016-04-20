@@ -22,7 +22,7 @@ class SurveysController < ApplicationController
     @survey.diet = params[:diet]
 
     if @survey.save
-      redirect_to "/surveys", :notice => "Survey created successfully."
+      redirect_to "/footprint", :notice => "Survey created successfully."
     else
       render 'new'
     end
