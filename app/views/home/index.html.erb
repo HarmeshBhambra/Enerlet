@@ -1,11 +1,18 @@
 <div class="row">
   <div class="col-sm-12">
-      <div class="alert alert-dismissable alert-success">
-        <button type="button" href="/beta" class="close" data-dismiss="alert" aria-hidden="true">&times;</button>
-        Our beta has launched! Sign up today to understand your carboon footprint and travel greener.
-      </div>
+    <% if user_signed_in? == true %>
+    <div class="alert alert-dismissable alert-success">
+      <button type="button" href="/beta" class="close" data-dismiss="alert" aria-hidden="true">&times;</button>
+      Our beta has launched! Try today to understand your carboon footprint and travel greener.
     </div>
+    <% else %>
+    <div class="alert alert-dismissable alert-success">
+      <button type="button" href="/beta" class="close" data-dismiss="alert" aria-hidden="true">&times;</button>
+      Our beta has launched! Sign up today to understand your carboon footprint and travel greener.
     </div>
+    <% end %>
+  </div>
+</div>
 
 <style>
   .wrap
@@ -33,19 +40,20 @@
       <div class="container">
         <div class="row">
           <div class="col-sm-offset-1 col-sm-5">
-            <% if user_signed_in? == true %>
             <h3 class="text_over_image"><a href="/beta" style="color:white">
-              Start Trial >
-            <% else %>
-            <h3 class="text_over_image"><a href="/aboutus" style="color:white">
               About >
-            <% end %>
             </a></h3>
           </div>
           <div class="col-sm-5">
+          <% if user_signed_in? == true %>
+            <h3 class="text_over_image"><a href="/aboutus" style="color:white">
+              Try Beta >
+            </a></h3>
+          <% else %>
             <h3 class="text_over_image"> <a href="/users/sign_up" style="color:white">
               Sign Up >
             </a></h3>
+          <% end %>
           </div>
         </div>
       </div>
