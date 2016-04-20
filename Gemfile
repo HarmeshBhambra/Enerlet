@@ -9,6 +9,8 @@ gem 'omniauth-facebook', '~> 1.4.1'
 
 gem "chartkick"
 
+gem 'stripe'
+
 gem 'jquery-turbolinks'
 
 gem 'momentjs-rails', '>= 2.9.0'

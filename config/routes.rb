@@ -29,4 +29,6 @@ get "/trip/map", :controller => "trips", :action => "map"
 
 get "/trip/google_map", :controller => "trips", :action => "google_map"
 
+# Routes for the Stripe Charges resource
+resources :charges
 end
