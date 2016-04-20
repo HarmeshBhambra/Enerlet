@@ -1,6 +1,30 @@
+<style>
+  html, body {
+    height: 100%;
+    margin: 0;
+    padding: 50px;
+  }
+  #map {
+    height: 100%;
+  }
+  #floating-panel {
+    position: relative;
+    top: 10px;
+    left: 25%;
+    z-index: 5;
+    background-color: #fff;
+    padding: 5px;
+    border: 1px solid #999;
+    text-align: center;
+    font-family: 'Roboto','sans-serif';
+    line-height: 30px;
+    padding-left: 10px;
+  }
+</style>
+
 <div class="page-header">
   <h2>
-    Your Greenest Trips
+    Greenest Trip
   </h2>
 </div>
 
@@ -10,64 +34,39 @@
 </h4>
 
 <div class="row">
-    <div class="col-md-12">
-      <table class="table table-striped table-hover table-responsive">
-        <tr>
-          <th colspan="4">Mode</th>
-          <th colspan="4">Distance</th>
-          <th colspan="4">Carbon (pounds)</th>
-        </tr>
-        <tr>
-          <td colspan="4">Walking</td>
-          <td colspan="4"><%= @distance_walking %></td>
-          <td colspan="4"><%= @carbon_walking.round(2) %></td>
-        </tr>
-        <tr>
-          <td colspan="4">Bicycling</td>
-          <td colspan="4"><%= @distance_bicycling %></td>
-          <td colspan="4"><%= @carbon_bicycling.round(2) %></td>
-        </tr>
-        <tr>
-          <td colspan="4">Transit</td>
-          <td colspan="4"><%= @distance_transit %></td>
-          <td colspan="4"><%= @carbon_transit.round(2) %></td>
-        </tr>
-        <tr>
-          <td colspan="4">Driving</td>
-          <td colspan="4"><%= @distance_driving %></td>
-          <td colspan="4"><%= @carbon_driving.round(2) %></td>
-        </tr>
-      </table>
-    </div>
+  <div class="col-md-12">
+    <table class="table table-striped table-hover table-responsive">
+      <tr>
+        <th colspan="4">Mode</th>
+        <th colspan="4">Distance</th>
+        <th colspan="4">Carbon (pounds)</th>
+      </tr>
+      <tr>
+        <td colspan="4">Walking</td>
+        <td colspan="4"><%= @distance_walking %></td>
+        <td colspan="4"><%= @carbon_walking.round(2) %></td>
+      </tr>
+      <tr>
+        <td colspan="4">Bicycling</td>
+        <td colspan="4"><%= @distance_bicycling %></td>
+        <td colspan="4"><%= @carbon_bicycling.round(2) %></td>
+      </tr>
+      <tr>
+        <td colspan="4">Transit</td>
+        <td colspan="4"><%= @distance_transit %></td>
+        <td colspan="4"><%= @carbon_transit.round(2) %></td>
+      </tr>
+      <tr>
+        <td colspan="4">Driving</td>
+        <td colspan="4"><%= @distance_driving %></td>
+        <td colspan="4"><%= @carbon_driving.round(2) %></td>
+      </tr>
+    </table>
   </div>
-
-
-    <style>
-      html, body {
-        height: 100%;
-        margin: 0;
-        padding: 50px;
-      }
-      #map {
-        height: 100%;
-      }
-      #floating-panel {
-        position: relative;
-        top: 10px;
-        left: 25%;
-        z-index: 5;
-        background-color: #fff;
-        padding: 5px;
-        border: 1px solid #999;
-        text-align: center;
-        font-family: 'Roboto','sans-serif';
-        line-height: 30px;
-        padding-left: 10px;
-      }
-    </style>
+</div>
 
 <div class="row">
-    <div class="col-md-12">
+  <div class="col-md-12">
     <div id="floating-panel">
     <b>Mode of Travel: </b>
     <select id="mode">
@@ -77,6 +76,9 @@
       <option value="TRANSIT">Transit</option>
     </select>
     </div>
+
+    <hr>
+
     <div id="map" style="width: 400px; height: 400px"></div>
     <script>
       function initMap() {
