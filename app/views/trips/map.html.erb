@@ -79,23 +79,23 @@ src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDkf2cfio5CEM-bD6V1_NHsiGP
       </tr>
       <tr>
         <td colspan="4">Walking</td>
-        <td colspan="4"><%= @duration_walking %></td>
-        <td colspan="4"><%= @carbon_walking %></td>
+        <td colspan="4"><%= number_with_precision(@duration_walking, :precision => 2, :delimiter => ',') %></td>
+        <td colspan="4"><%= number_with_precision(@carbon_walking, :precision => 2, :delimiter => ',') %></td>
       </tr>
       <tr>
         <td colspan="4">Bicycling</td>
-        <td colspan="4"><%= @duration_bicycling %></td>
-        <td colspan="4"><%= @carbon_bicycling %></td>
+        <td colspan="4"><%= number_with_precision(@duration_bicycling, :precision => 2, :delimiter => ',') %></td>
+        <td colspan="4"><%= number_with_precision(@carbon_bicycling, :precision => 2, :delimiter => ',') %></td>
       </tr>
       <tr>
         <td colspan="4">Transit</td>
-        <td colspan="4"><%= @duration_transit %></td>
-        <td colspan="4"><%= @carbon_transit %></td>
+        <td colspan="4"><%= number_with_precision(@duration_transit, :precision => 2, :delimiter => ',') %></td>
+        <td colspan="4"><%= number_with_precision(@carbon_transit, :precision => 2, :delimiter => ',') %></td>
       </tr>
       <tr>
         <td colspan="4">Driving</td>
-        <td colspan="4"><%= @duration_driving %></td>
-        <td colspan="4"><%= @carbon_driving %></td>
+        <td colspan="4"><%= number_with_precision(@duration_driving, :precision => 2, :delimiter => ',') %></td>
+        <td colspan="4"><%= number_with_precision(@carbon_driving, :precision => 2, :delimiter => ',') %></td>
       </tr>
     </table>
   </div>
