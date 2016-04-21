@@ -39,7 +39,7 @@ def map
 
   @distance_transit = parsed_data_transit["routes"][0]["legs"][0]["distance"]["text"]
 
-  @carbon_transit = @distance_transit.to_f**0.19
+  @carbon_transit = @distance_transit.gsub(/[^0-9]/,'').delete('mi').to_f**0.19
 
   @duration_transit = parsed_data_transit["routes"][0]["legs"][0]["duration"]["text"]
 
@@ -50,7 +50,7 @@ def map
 
   @distance_driving = parsed_data_driving["routes"][0]["legs"][0]["distance"]["text"]
 
-  @carbon_driving = @distance_driving.to_f**0.9042
+  @carbon_driving = @distance_driving.gsub(/[^0-9]/,'').delete('mi').to_f**0.9042
 
   @duration_driving = parsed_data_driving["routes"][0]["legs"][0]["duration"]["text"]
 
@@ -61,7 +61,7 @@ def map
 
   @distance_walking = parsed_data_walking["routes"][0]["legs"][0]["distance"]["text"]
 
-  @carbon_walking = @distance_walking.to_f*0
+  @carbon_walking = @distance_walking.gsub(/[^0-9]/,'').delete('mi').to_f*0
 
   @duration_walking = parsed_data_walking["routes"][0]["legs"][0]["duration"]["text"]
 
@@ -72,7 +72,7 @@ def map
 
   @distance_bicycling = parsed_data_bicycling["routes"][0]["legs"][0]["distance"]["text"]
 
-  @carbon_bicycling = @distance_bicycling.to_f*0
+  @carbon_bicycling = @distance_bicycling.gsub(/[^0-9]/,'').delete('mi').to_f*0
 
   @duration_bicycling = parsed_data_bicycling["routes"][0]["legs"][0]["duration"]["text"]
 
