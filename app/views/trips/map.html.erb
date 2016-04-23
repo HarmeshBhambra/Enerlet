@@ -21,6 +21,10 @@
   }
 </style>
 
+<% content_for(:body_attributes) do %>
+    data-no-turbolink="true"
+  <% end %>
+
 <script>
   function initMap() {
     var directionsDisplay = new google.maps.DirectionsRenderer;

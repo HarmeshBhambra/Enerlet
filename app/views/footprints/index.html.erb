@@ -43,6 +43,10 @@
     </script>
   </head>
 
+<% content_for(:body_attributes) do %>
+    data-no-turbolink="true"
+  <% end %>
+
 <ul class="nav nav-tabs">
   <li role="presentation" class="active"><a href="#">Overall</a></li>
   <li role="presentation"><a href="#">Month</a></li>
@@ -61,7 +65,3 @@
   ga('send', 'pageview');
 
 </script>
-
-<% content_for(:body_attributes) do %>
-    data-no-turbolink="true"
-  <% end %>
