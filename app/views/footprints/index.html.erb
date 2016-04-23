@@ -1,51 +1,47 @@
- <div class="page-header">
-  <h2>
-    Footprint
-  </h2>
-  <div class="fb-share-button" data-href="https://enerlet1.herokuapp.com/footprint" data-layout="button_count" data-mobile-iframe="true"></div>
+<% content_for(:body_attributes) do %>
+    data-no-turbolink="true"
+  <% end %>
+
+<div class="page-header">
+<h2>
+  Footprint
+</h2>
+<div class="fb-share-button" data-href="https://enerlet1.herokuapp.com/footprint" data-layout="button_count" data-mobile-iframe="true"></div>
 </div>
 
 <div class="well">
   Based on your lifestyle you can compare your carbon footprint to the average American. To see your updated footprint, fill in the lifestyle survey.
 </div>
 
-  <head>
-    <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
-    <script type="text/javascript">
-      google.charts.load('current', {'packages':['corechart']});
-    </script>
-    <script type="text/javascript">
-      $(function() {
-    drawChart();
-  });
-      function drawChart() {
-        var data = google.visualization.arrayToDataTable([
-          ['Year', 'Me', 'Community'],
-          ['2013',  1000,      400],
-          ['2014',  1170,      460],
-          ['2015',  660,       1120],
-          ['2016',  1030,      540]
-        ]);
+<head>
+  <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js">
+    google.charts.load('current', {packages: ['corechart', 'bar']});
+google.charts.setOnLoadCallback(drawStacked);
 
-        var options = {
-          title: 'Comparing Your Carbon Footprint',
-          hAxis: {title: 'Year',  titleTextStyle: {color: '#333'}},
-          vAxis: {minValue: 0}
-        };
+function drawStacked() {
+      var data = google.visualization.arrayToDataTable([
+        ['City', '2010 Population', '2000 Population'],
+        ['New York City, NY', 8175000, 8008000],
+        ['Los Angeles, CA', 3792000, 3694000]
+      ]);
 
-        var chart = new google.visualization.AreaChart(document.getElementById('chart_div1'));
-        chart.draw(data, options);
-      }
+      var options = {
+        title: 'Population of Largest U.S. Cities',
+        chartArea: {width: '50%'},
+        isStacked: true,
+        hAxis: {
+          title: 'Total Population',
+          minValue: 0,
+        },
+        vAxis: {
+          title: 'City'
+        }
+      };
+      var chart = new google.visualization.BarChart(document.getElementById('chart_div'));
+      chart.draw(view,options)
+  </script>
+</head>
 
-      $(window).resize(function(){
-      drawChart();
-      });
-    </script>
-  </head>
-
-<% content_for(:body_attributes) do %>
-    data-no-turbolink="true"
-  <% end %>
 
 <ul class="nav nav-tabs">
   <li role="presentation" class="active"><a href="#">Overall</a></li>
@@ -53,7 +49,7 @@
   <li role="presentation"><a href="#">Week</a></li>
 </ul>
 
-<div id="chart_div1" style="height: 500px;"></div>
+<div id="chart_div" style="width: 400px; height: 240px;"></div>
 
 <script>
   (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
