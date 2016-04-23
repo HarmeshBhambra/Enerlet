@@ -4,7 +4,7 @@
 
 <script>
 $(document).ready(function(){
-    $('[data-toggle="tooltip"]').tooltip();
+    $('[data-toggle="popover"]').popover();
 });
 </script>
 
@@ -30,11 +30,6 @@ $(document).ready(function(){
   <p>We can better help you understand and improve your carbon footprint by knowing more about your habits.</p>
 </div>
 
-<div class="container">
-<h3>What is your diet?</h3>
-<a href="#" data-toggle="tooltip" title="Some tooltip text!">Consumption is a major component of your carbon footprint</a>
-</div>
-
 <div class="row">
   <div class="col-md-12">
     <form action="/create_survey" method="post">
@@ -50,8 +45,7 @@ $(document).ready(function(){
       <div class="form-group">
         <label for="diet" class="control-label">
           What is your diet?
-          <a href="#" data-toggle="tooltip" title="Some tooltip text!">Consumption is a major component of your carbon footprint</a>
-        </label>
+          <a href="#" data-toggle="popover" title="Consumption" data-content="Consumption represents 40% of an average persons footprint.">Learn More</a>
 
         <select class="form-control" id="diet" name="diet">
             <option value="Meat Lover">Meat Lover</option>
