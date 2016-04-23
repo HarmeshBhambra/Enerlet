@@ -2,6 +2,12 @@
     data-no-turbolink="true"
   <% end %>
 
+<script>
+  $(function () {
+  $('[data-toggle="tooltip"]').tooltip()
+})
+</script>
+
 <!-- Validation failure messages -->
 <% if @survey.errors.any? %>
   <% @survey.errors.full_messages.each do |message| %>
