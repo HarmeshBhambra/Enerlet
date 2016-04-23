@@ -2,6 +2,7 @@
   <h2>
     Footprint
   </h2>
+  <div class="fb-share-button" data-href="https://enerlet1.herokuapp.com/footprint" data-layout="button_count" data-mobile-iframe="true"></div>
 </div>
 
 <div class="well">
@@ -61,3 +62,6 @@
 
 </script>
 
+<% content_for(:body_attributes) do %>
+    data-no-turbolink="true"
+  <% end %>
