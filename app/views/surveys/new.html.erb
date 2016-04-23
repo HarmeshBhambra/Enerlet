@@ -3,9 +3,9 @@
   <% end %>
 
 <script>
-  $(function () {
-  $('[data-toggle="tooltip"]').tooltip()
-})
+$(document).ready(function(){
+    $('[data-toggle="tooltip"]').tooltip();
+});
 </script>
 
 <!-- Validation failure messages -->
@@ -44,14 +44,8 @@
       <!-- Label and input for diet -->
       <div class="form-group">
         <label for="diet" class="control-label">
-          <a href="#" data-toggle="tooltip" title="Some tooltip text!">What is your diet?</a>
-          <!-- Generated markup by the plugin -->
-          <div class="tooltip top" role="tooltip">
-            <div class="tooltip-arrow"></div>
-            <div class="tooltip-inner">
-              Some tooltip text!
-            </div>
-          </div>
+          What is your diet?
+          <a href="#" data-toggle="tooltip" title="Some tooltip text!">Consumption is a major component of your carbon footprint</a>
         </label>
 
         <select class="form-control" id="diet" name="diet">
