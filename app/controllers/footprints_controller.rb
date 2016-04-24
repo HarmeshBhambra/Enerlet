@@ -4,19 +4,19 @@ def index
 
   # Diet calculation
 
-  # @survey_diet = @survey.diet.to_s
+  @survey_diet = @survey.diet.to_s
 
-  # if @survey_diet == "Meat Lover"
-  #   @diet_carbon = 7275
-  # elsif @survey_diet == "Average American"
-  #   @diet_carbon = 5511
-  # elsif @survey_diet == "No Beef"
-  #   @diet_carbon = 4189
-  # elsif @survey_diet == "Vegetarian"
-  #   @diet_carbon = 3748
-  # elsif @survey_diet == "Vegan"
-  #   @diet_carbon = 3307
-  # end
+  if @survey_diet == "Meat Lover"
+    @diet_carbon = 7275
+  elsif @survey_diet == "Average American"
+    @diet_carbon = 5511
+  elsif @survey_diet == "No Beef"
+    @diet_carbon = 4189
+  elsif @survey_diet == "Vegetarian"
+    @diet_carbon = 3748
+  elsif @survey_diet == "Vegan"
+    @diet_carbon = 3307
+  end
 
   # Car Type and Miles calculation
 
