@@ -62,7 +62,7 @@ def index
 
   # Car Share calculation
 
-  @carbon_car_share = @car_carbon.to_f / @survey.car_share.to_f
+  @carbon_car_share = @car_carbon.to_i / (1 + @survey.car_share.to_i)
 
   # Flight Miles calculation
 
@@ -80,7 +80,7 @@ def index
     @flight_miles_carbon = 4
   end
 
-  @carbon_transport = @flight_miles_carbon.to_f + @carbon_car_share.to_f
+  @carbon_transport = @flight_miles_carbon.to_i + @carbon_car_share.to_i
 
 end
 
