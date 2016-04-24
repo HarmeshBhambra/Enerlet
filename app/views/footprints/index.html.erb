@@ -48,11 +48,11 @@ $(function () {
             }
         },
         legend: {
-            align: 'right',
+            align: 'center',
             x: -30,
             verticalAlign: 'top',
             y: 25,
-            floating: true,
+            floating: false,
             backgroundColor: (Highcharts.theme && Highcharts.theme.background2) || 'white',
             borderColor: '#CCC',
             borderWidth: 1,
@@ -76,10 +76,10 @@ $(function () {
         },
         series: [{
             name: 'Transport',
-            data: [<%= @carbon_transport %>, 10000]
+            data: [<%= @carbon_transport %>, 28000]
         }, {
             name: 'Consumption',
-            data: [<%= @diet_carbon %>, 4000]
+            data: [<%= @diet_carbon %>, 5512]
         }, {
             name: 'Utilities',
             data: [3000, 3000]
