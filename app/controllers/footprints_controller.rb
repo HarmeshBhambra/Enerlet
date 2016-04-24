@@ -34,8 +34,6 @@ def index
     @car_carbon = 14771
   elsif @survey_car_type == 1 && @survey_car_miles == 3
      @car_carbon = 25251
-  elsif @survey_car_type == 1 && @survey_car_miles == 4
-
   elsif @survey_car_type == 2 && @survey_car_miles == 0
     @car_carbon = 4409
   elsif @survey_car_type == 2 && @survey_car_miles == 1
@@ -44,9 +42,6 @@ def index
     @car_carbon = 21605
   elsif @survey_car_type == 2 && @survey_car_miles == 3
     @car_carbon = 35274
-  elsif @survey_car_type == 2 && @survey_car_miles == 4
-
-
   elsif @survey_car_type == 3 && @survey_car_miles == 0
     @car_carbon = 5071
   elsif @survey_car_type == 3 && @survey_car_miles == 1
@@ -55,8 +50,6 @@ def index
     @car_carbon = 24251
   elsif @survey_car_type == 3 && @survey_car_miles == 3
     @car_carbon = 41887
-  elsif @survey_car_type == 3 && @survey_car_miles == 4
-
   elsif @survey_car_type == 4 && @survey_car_miles == 0
     @car_carbon = 5732
   elsif @survey_car_type == 4 && @survey_car_miles == 1
@@ -65,14 +58,11 @@ def index
     @car_carbon = 28660
   elsif @survey_car_type == 4 && @survey_car_miles == 3
     @car_carbon = 48501
-  elsif @survey_car_type == 4 && @survey_car_miles == 4
-
-
   end
 
   # Car Share calculation
 
-  @survey_car_share = @survey.car_share
+  @carbon_car_share = @car_carbon.to_f / @survey.car_share.to_f
 
   # Flight Miles calculation
 
@@ -90,6 +80,7 @@ def index
     @flight_miles_carbon = 4
   end
 
+  @carbon_transport = @flight_miles_carbon.to_f + @carbon_car_share.to_f
 
 end
 
