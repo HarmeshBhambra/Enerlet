@@ -4,7 +4,7 @@ def index
 
   # Diet calculation
 
-  @survey_diet = @survey.diet
+  @survey_diet = @survey.diet.to_s
 
   if @survey_diet == "Meat Lover"
     @diet_carbon = 7275
