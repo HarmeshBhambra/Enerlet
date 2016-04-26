@@ -69,15 +69,15 @@ def index
   @survey_flight_miles = @survey.flight_miles
 
   if @survey_flight_miles == 0
-    @flight_miles_carbon = 0
+    @flight_miles_carbon = 1236
   elsif @survey_flight_miles == 1
-    @flight_miles_carbon = 1
+    @flight_miles_carbon = 3708
   elsif @survey_flight_miles == 2
-    @flight_miles_carbon = 2
+    @flight_miles_carbon = 6180
   elsif @survey_flight_miles == 3
-    @flight_miles_carbon = 3
+    @flight_miles_carbon = 8652
   elsif @survey_flight_miles == 4
-    @flight_miles_carbon = 4
+    @flight_miles_carbon = 11948
   end
 
   @carbon_transport = @flight_miles_carbon.to_i + @carbon_car_share.to_i
