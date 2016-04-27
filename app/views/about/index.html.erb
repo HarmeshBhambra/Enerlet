@@ -30,13 +30,15 @@
   <div class="col-sm-12">
     <% if user_signed_in? == true %>
     <div class="alert alert-dismissable alert-success">
-      <button type="button" href="/beta" class="close" data-dismiss="alert" aria-hidden="true">&times;</button>
-      Our beta has launched! Try today to understand your carbon footprint and travel greener.
+      <button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button>
+      Our beta has launched!
+      <a href="/beta" class="alert-link">Try today</a> to understand your carbon footprint and travel greener.
     </div>
     <% else %>
     <div class="alert alert-dismissable alert-success">
-      <button type="button" href="/beta" class="close" data-dismiss="alert" aria-hidden="true">&times;</button>
-      Our beta has launched! Sign up today to understand your carbon footprint and travel greener.
+      <button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button>
+      Our beta has launched!
+      <a href="/users/sign_up" class="alert-link">Sign up</a> today to understand your carbon footprint and travel greener.
     </div>
     <% end %>
   </div>
