@@ -2,6 +2,7 @@ class FootprintsController < ApplicationController
 def index
   @survey = Survey.find_by({:user_id => current_user.id})
 
+  if @survey.blank? == false
   # Diet calculation
 
   @survey_diet = @survey.diet.to_s
@@ -85,6 +86,18 @@ def index
   @total_carbon = @carbon_transport + @diet_carbon + 11464 + 12787
 
   @total_trees = @total_carbon / 911
+
+else
+  @diet_carbon = 5512
+
+  @carbon_transport = 28000
+
+  @total_carbon = @carbon_transport + @diet_carbon + 11464 + 12787
+
+  @total_trees = @total_carbon / 911
+
+
+end
 
 end
 

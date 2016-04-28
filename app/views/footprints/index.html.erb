@@ -24,7 +24,6 @@
 
 <script>
 
-<% @survey.blank? == false %>
 $(function () {
     $('#container').highcharts({
         chart: {
@@ -95,78 +94,6 @@ $(function () {
         }]
     });
 });
-<% else %>
-$(function () {
-    $('#container').highcharts({
-        chart: {
-            type: 'column'
-        },
-        title: {
-            text: 'Annual estimated carbon footprint vs. average American'
-        },
-        credits: {
-            enabled: false
-        },
-        xAxis: {
-            categories: ['Me', 'Average']
-        },
-        yAxis: {
-            min: 0,
-            title: {
-                text: 'Carbon footprint (pounds)'
-            },
-            stackLabels: {
-                enabled: true,
-                style: {
-                    fontWeight: 'bold',
-                    color: (Highcharts.theme && Highcharts.theme.textColor) || 'gray'
-                }
-            }
-        },
-        legend: {
-            align: 'center',
-            x: 0,
-            verticalAlign: 'bottom',
-            y: 20,
-            floating: true,
-            backgroundColor: (Highcharts.theme && Highcharts.theme.background2) || 'white',
-            borderColor: 0,
-            borderWidth: 0,
-            shadow: false
-        },
-        tooltip: {
-            headerFormat: '<b>{point.x}</b><br/>',
-            pointFormat: '{series.name}: {point.y}<br/>Total: {point.stackTotal}'
-        },
-        plotOptions: {
-            column: {
-                stacking: 'normal',
-                dataLabels: {
-                    enabled: true,
-                    color: (Highcharts.theme && Highcharts.theme.dataLabelsColor) || 'white',
-                    style: {
-                        textShadow: '0 0 3px black'
-                    }
-                }
-            }
-        },
-        series: [{
-            name: 'Food',
-            data: [5512, 5512]
-        },
-        {
-            name: 'Home',
-            data: [11464, 11464]
-        },{
-            name: 'Products and services',
-            data: [12787, 12787]
-        }, {
-            name: 'Travel',
-            data: [28000, 28000]
-        }]
-    });
-});
-<% end %>
 </script>
 
 <div id="container" style="width:100%; height:400px;"></div>
