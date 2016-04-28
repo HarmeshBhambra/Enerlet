@@ -82,7 +82,7 @@ def index
   end
 
   # Public Transport calculation
-  @public_transport = @survey.public_transport
+  @public_transport = @survey.flight_type
   if @public_transport == 0
     @public_transport_carbon = 0
   elsif @public_transport == 1
