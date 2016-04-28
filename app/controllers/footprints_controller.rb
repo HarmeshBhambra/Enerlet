@@ -82,6 +82,10 @@ def index
 
   @carbon_transport = @flight_miles_carbon.to_i + @carbon_car_share.to_i
 
+  @total_carbon = @carbon_transport + @diet_carbon + 11464 + 12787
+
+  @total_trees = @total_carbon / 911
+
 end
 
 end

@@ -10,13 +10,14 @@
 </div>
 
 <div class="well">
-  Based on your lifestyle you can compare your carbon footprint to the average American. <a href="/surveys/new">Complete</a> the lifestyle survey so we can calculate your carbon footprint.
+  <p>Your carbon footprint is estimated at <%= @total_carbon %> pounds, equivalent to <strong><%= @total_trees %></strong>
+  </p>
 </div>
 
 <ul class="nav nav-tabs">
   <li role="presentation" class="active"><a href="#">Overall</a></li>
-  <li role="presentation"><a href="#">Month</a></li>
-  <li role="presentation"><a href="#">Week</a></li>
+  <li role="presentation"><a href="#">Month (Coming soon)</a></li>
+  <li role="presentation"><a href="#">Week (Coming soon)</a></li>
 </ul>
 
 <script src="https://code.highcharts.com/highcharts.js"></script>
@@ -78,11 +79,18 @@ $(function () {
             }
         },
         series: [{
-            name: 'Travel - Driving and flights',
-            data: [<%= @carbon_transport %>, 28000]
-        }, {
             name: 'Food',
             data: [<%= @diet_carbon %>, 5512]
+        },
+        {
+            name: 'Home',
+            data: [11464, 11464]
+        },{
+            name: 'Products and services',
+            data: [12787, 12787]
+        }, {
+            name: 'Travel',
+            data: [<%= @carbon_transport %>, 28000]
         }]
     });
 });
