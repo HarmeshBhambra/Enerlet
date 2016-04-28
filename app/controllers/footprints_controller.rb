@@ -81,7 +81,25 @@ def index
     @flight_miles_carbon = 11948
   end
 
-  @carbon_transport = @flight_miles_carbon.to_i + @carbon_car_share.to_i
+  # Public Transport calculation
+  @public_transport = @survey.public_transport
+  if @public_transport == 0
+    @public_transport_carbon = 0
+  elsif @public_transport == 1
+    @public_transport_carbon = 285
+  elsif @public_transport == 2
+    @public_transport_carbon = 713
+  elsif @public_transport == 3
+    @public_transport_carbon = 1425
+  elsif @public_transport == 4
+    @public_transport_carbon = 2850
+  elsif @public_transport == 5
+    @public_transport_carbon = 4750
+  end
+
+
+  # Total calculation
+  @carbon_transport = @flight_miles_carbon.to_i + @carbon_car_share.to_i + @public_transport_carbon.to_i
 
   @total_carbon = @carbon_transport + @diet_carbon + 11464 + 12787
 

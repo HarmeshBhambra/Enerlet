@@ -99,6 +99,22 @@
         </select>
       </div>
 
+      <!-- Label and input for flight_type -->
+      <div class="form-group">
+        <label for="public_transport" class="control-label">
+        Do you use public transport?
+        </label>
+
+        <select class="form-control" id="public_transport" name="public_transport">
+          <option value="0">N/A</option>
+          <option value="1">10-50 miles per week</option>
+          <option value="2">50-100 miles per week</option>
+          <option value="3">100-200 miles per week</option>
+          <option value="4">200-400 miles per week</option>
+          <option value="5">400+ miles per week</option>
+        </select>
+      </div>
+
       <!-- Label and input for flight_miles -->
       <div class="form-group">
         <label for="flight_miles" class="control-label">
@@ -113,15 +129,6 @@
           <option value="4">60+ Hours (30,000+ miles)</option>
         </select>
       </div>
-
-      <!-- Label and input for flight_type -->
-      <!-- <div class="form-group">
-        <label for="flight_type" class="control-label">
-          Flight type
-        </label>
-
-        <input type="text" id="flight_type" name="flight_type" placeholder="Flight type" class="form-control" value="<%= @survey.flight_type %>">
-      </div> -->
 
       <button class="btn btn-success">
         Submit
