@@ -26,13 +26,13 @@ Rails.application.routes.draw do
   get "/surveys", :controller => "surveys", :action => "index"
   get "/surveys/:id", :controller => "surveys", :action => "show"
 
-  # # UPDATE
-  # get "/surveys/:id/edit", :controller => "surveys", :action => "edit"
-  # post "/update_survey/:id", :controller => "surveys", :action => "update"
+  # UPDATE
+  get "/surveys/:id/edit", :controller => "surveys", :action => "edit"
+  post "/update_survey/:id", :controller => "surveys", :action => "update"
 
-  # # DELETE
-  # get "/delete_survey/:id", :controller => "surveys", :action => "destroy"
-  # #------------------------------
+  # DELETE
+  get "/delete_survey/:id", :controller => "surveys", :action => "destroy"
+  #------------------------------
 
   # get 'sessions/create'
 
