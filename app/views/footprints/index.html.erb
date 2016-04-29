@@ -11,9 +11,9 @@
 
 <div class="well">
   <% if @survey.blank? == false %>
-  Your carbon footprint is estimated at <%= @total_carbon %> pounds, equivalent to <strong><%= @total_trees %> trees</strong>
+  Your carbon footprint is estimated at <%= number_with_precision(@total_carbon, :precision => 0, :delimiter => ',') %> pounds, equivalent to <strong><%= @total_trees %> trees</strong>.
   <% else %>
-  Please fill in the <a href="/surveys/new">lifestyle survey</a> to customize your carbon footprint
+  Please fill in the <a href="/surveys/new">lifestyle survey</a> to customize your carbon footprint.
   <% end %>
 </div>
 
@@ -105,7 +105,7 @@ $(function () {
 <br>
 
 <div>
-  <p>We are working on adding home, consumption and other carbon souces to your carbon footprint calculation. Estimates are based on your survey responses and data from Nature.org, AmericanForests.org and ShrinkThatFootprint.com</p>
+  <p>Coming soon: customized home, and products and services carbon footprint calculations.Estimates are based on your your survey responses and data from Nature.org, AmericanForests.org and ShrinkThatFootprint.com.</p>
 </div>
 
 <hr>
