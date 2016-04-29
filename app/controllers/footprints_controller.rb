@@ -1,4 +1,7 @@
 class FootprintsController < ApplicationController
+
+before_action :authenticate_user!
+
 def index
   @survey = Survey.find_by({:user_id => current_user.id})
 

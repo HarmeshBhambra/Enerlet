@@ -1,5 +1,7 @@
 class TripsController < ApplicationController
 
+before_action :authenticate_user!
+
 def plan_journey
 end
 
