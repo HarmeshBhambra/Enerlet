@@ -22,9 +22,9 @@ Rails.application.routes.draw do
   get "/surveys/new", :controller => "surveys", :action => "new"
   post "/create_survey", :controller => "surveys", :action => "create"
 
-  # # READ
-  # get "/surveys", :controller => "surveys", :action => "index"
-  # get "/surveys/:id", :controller => "surveys", :action => "show"
+  # READ
+  get "/surveys", :controller => "surveys", :action => "index"
+  get "/surveys/:id", :controller => "surveys", :action => "show"
 
   # # UPDATE
   # get "/surveys/:id/edit", :controller => "surveys", :action => "edit"
