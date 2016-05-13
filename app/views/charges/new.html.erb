@@ -1,3 +1,65 @@
+<style>
+  .jumbotron {
+    padding: 5px;
+  }
+</style>
+
+<% content_for(:body_attributes) do %>
+    data-no-turbolink="true"
+  <% end %>
+
+<div class="page-header">
+  <h2>
+    Carbon Offset
+  </h2>
+  <div class="fb-share-button" data-href="https://enerlet1.herokuapp.com" data-layout="button_count" data-mobile-iframe="true"></div>
+</div>
+
+<div class="jumbotron">
+  <h1>Offset your carbon. One tree at a time.</h1>
+  <p>We have partnered with American Forests so you can offset your carbon today for only $1 per tree.</p>
+</div>
+
+<h3>Your monthly carbon footprint</h3>
+<span class="label label-default">10,000 pounds</span>
+<span class="label label-default">12 trees</span>
+
+<h3>Offset amount</h3>
+<div class="radio">
+  <label>
+    <input type="radio" name="optionsRadios" id="optionsRadios1" value="option1" checked>
+    100%
+  </label>
+  <span class="label label-default">12 trees</span>
+  <span class="label label-default">$12</span>
+</div>
+<div class="radio">
+  <label>
+    <input type="radio" name="optionsRadios" id="optionsRadios2" value="option2">
+    75%
+  </label>
+  <span class="label label-default">8 trees</span>
+  <span class="label label-default">$8</span>
+</div>
+<div class="radio">
+  <label>
+    <input type="radio" name="optionsRadios" id="optionsRadios2" value="option2">
+    50%
+  </label>
+  <span class="label label-default">6 trees</span>
+  <span class="label label-default">$6</span>
+</div>
+<div class="radio">
+  <label>
+    <input type="radio" name="optionsRadios" id="optionsRadios2" value="option2">
+    25%
+  </label>
+  <span class="label label-default">3 trees</span>
+  <span class="label label-default">$3</span>
+</div>
+
+<hr>
+
 <%= form_tag charges_path do %>
   <article>
     <% if flash[:error].present? %>
@@ -6,7 +68,7 @@
       </div>
     <% end %>
     <label class="amount">
-      <span>Amount: $5.00</span>
+      <span>Offset all your carbon (12 trees): $12.00</span>
     </label>
   </article>
 
